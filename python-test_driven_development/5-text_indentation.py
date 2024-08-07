@@ -1,14 +1,15 @@
 #!/usr/bin/python3
-""""prints a square"""
+""""text_indentation"""
 
 
-def print_square(size):
-    """"prtin square"""
-    if not isinstance(size, (int,)):
-        raise TypeError("size must be an integer")
+def text_indentation(text):
+    """ text indentation
+    """
+    if type(text) is not str:
+        raise TypeError("text must be a string")
 
-    if size < 0:
-        raise ValueError("size must be >= 0")
+    for delim in ".:?":
+        text = (delim + "\n\n").join(
+            [line.strip(" ") for line in text.split(delim)])
 
-    for _ in range(size):
-        print("#" * size)
+    print("{}".format(text), end="")
