@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-num = 122
-while num > 96:
-    print("{}".format(chr(num) if num % 2 == 0 else chr(num - 32)), end="")
-    num -= 1
+i = 0
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(c - i)), end="")
+    i = 32 if i == 0 else 0
